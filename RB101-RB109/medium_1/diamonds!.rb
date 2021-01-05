@@ -1,17 +1,13 @@
-def print_lines(lines, n)
-  lines.each do |i|
-    line = "*"
-    (i - 2).times do line << " " end
-    if i > 1 then line << "*" end
-    puts line.center(n)
-  end
-end
-
 def diamond(n)
-  up_lines = (1..n).select { |i| i.odd? }
-  down_lines = up_lines.reverse.drop(1)
-  print_lines(up_lines, n)
-  print_lines(down_lines, n)
+  printable_lines = (1..n).select { |n| n.odd? }
+  split = [printable_lines, printable_lines.reverse.drop(1)]
+  split.each do |lines|
+    lines.each do |i|
+      line = "*"
+      line << (" " * (i-2)) + "*" if i > 1
+      puts line.center(printable_lines.max)
+    end
+  end
 end
 
 diamond(21)

@@ -38,4 +38,4 @@ def error(input)
   puts "ERROR! #{message}"
 end
 
-minilang('5 PRINT PUSH MULT PRINT PUSH 25 DIV 3 MOD PRINT')
+minilang('5 PRINT PUSH 3 PRINT ADD PRINT')
